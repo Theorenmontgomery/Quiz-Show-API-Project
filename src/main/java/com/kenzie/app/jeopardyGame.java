@@ -34,7 +34,7 @@ public class jeopardyGame {
             //conditions for how many questions and current questions
             System.out.println("""
                     Welcome to Jeopardy!
-                    You need 10 correct answers to win!
+                    You need 4 correct answers to win!
                     Good luck!""");
             if (clueObj.getClues().size() > 1) {
                 for (int i = 0; i < clueObj.getClues().size(); i++) {
@@ -56,11 +56,12 @@ public class jeopardyGame {
                         System.out.println("OH NO! You almost had it! No points for you! The answer was: " + clueObj.getClues().get(currentQuestion).getAnswer());
                     System.out.println("Your current score is: " + totalScore);
 
-                    //Must score 10 to win
-                    if (totalScore > 9) {
+                    //Must score 4 to win
+                    if (totalScore > 1 ) {
                         System.out.println("Wow you did it!");
                         break;
                     }
+
                 }
 
             }
