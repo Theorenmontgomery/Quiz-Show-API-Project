@@ -57,7 +57,7 @@ public class jeopardyGame {
                     System.out.println("Your current score is: " + totalScore);
 
                     //Must score 4 to win
-                    if (totalScore > 1 ) {
+                    if (totalScore > 3 ) {
                         System.out.println("Wow you did it!");
                         break;
                     }
