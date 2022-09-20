@@ -22,24 +22,21 @@ public class jeopardyGame {
             clueObj = objectMapper.readValue(httpResponseStr, CluesDTO.class);
             //loop through list of questions
             //set variables
-
             int totalScore = 0;
             int min = 1;
             int max = 10;
             //random question and category generator
-
             Random random = new Random();
             int value = random.nextInt(max + min) + min;
             random.nextInt();
             //conditions for how many questions and current questions
             System.out.println("""
                     Welcome to Jeopardy!
-                    You need 4 correct answers to win!
+                    How many can you get correct?
                     Good luck!""");
             if (clueObj.getClues().size() > 1) {
-                for (int i = 0; i < clueObj.getClues().size(); i++) {
+                for (int i = 0; i < 10; i++) {
                     int currentQuestion = random.nextInt(100);
-
                     System.out.println("Category: " + clueObj.getClues().get(currentQuestion).getCategory().getTitle());
                     System.out.println("Question: " + clueObj.getClues().get(currentQuestion).getQuestion());
 
@@ -56,14 +53,8 @@ public class jeopardyGame {
                         System.out.println("OH NO! You almost had it! No points for you! The answer was: " + clueObj.getClues().get(currentQuestion).getAnswer());
                     System.out.println("Your current score is: " + totalScore);
 
-                    //Must score 4 to win
-                    if (totalScore > 3 ) {
-                        System.out.println("Wow you did it!");
-                        break;
-                    }
 
                 }
-
             }
         } catch (JsonMappingException e) {
             throw new RuntimeException(e);
